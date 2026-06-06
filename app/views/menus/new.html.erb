@@ -1,0 +1,44 @@
+<%= form_for(@menu, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="menu-container">
+        <div class="col-12">
+            <p>Q1. トレーニングをする目的は…</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question1, "1", id: "custom_id1" %>
+            <label for="custom_id1">筋肉をつけるため</label>
+            <%= f.radio_button :question1, "2", id: "custom_id2" %>
+            <label for="custom_id2">痩せるため</label>
+        </div>
+        <div class="col-12">
+            <p>Q2. 体を動かすことに自信は…</p>
+        </div> 
+        <div class="col-6">
+            <%= f.radio_button :question2, "1", id: "custom_id3" %>
+            <label for="custom_id3">ある</label>
+            <%= f.radio_button :question2, "2", id: "custom_id4" %>
+            <label for="custom_id4">ない</label>
+        </div>   
+        <div class="col-12">
+            <p>Q3. トレーニング中にジャンプをすることが…</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question3, "1", id: "custom_id5" %>
+            <label for="custom_id5">できる</label>
+            <%= f.radio_button :question3, "2", id: "custom_id6" %>
+            <label for="custom_id6">できない</label>
+        </div>
+    
+        <div class="col-12">
+            <p>Q4. トレーニングのためのスペースが確保されて…</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.radio_button :question4, "1", id: "custom_id7" %>
+            <label for="custom_id7">いる（腕を広げて寝そべることができる）</label>
+            <p><%= f.radio_button :question4, "2", id: "custom_id8" %>
+            <label for="custom_id8">いない（その場で立ったりしゃがんだりすることができる程度である）</label>
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit " 結果 " %>
+    </div>
+<% end %>

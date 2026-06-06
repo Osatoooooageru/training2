@@ -1,0 +1,58 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+    <strong>投稿者:</strong>
+    <%= @tweet.user.email %>
+  </p>
+
+  <p>
+    <strong>トレーニング名:</strong>
+    <%= @tweet.genre %>
+  </p>
+
+  <p>
+    <strong>鍛えられる部位:</strong>
+    <%= @tweet.part %>
+  </p>
+
+  <p>
+    <strong>器具:</strong>
+    <%= @tweet.tool %>
+  </p>
+
+  <p>
+    <strong>難易度:</strong>
+    <%= @tweet.level %>
+  </p>
+
+  <p>
+    <strong>トレーニングに使えるスペース:</strong>
+    <%= @tweet.size %>
+  </p>
+  
+  <p>
+    <strong>ジャンプ:</strong>
+    <%= @tweet.jump %>
+  </p>
+  
+  <% if @tweet.image? %>
+    <p>
+      <strong>イメージ画像:</strong><br>
+      <%= image_tag @tweet.image_url, width: 400 %>
+    </p>
+  <% end %>
+
+  <% if @tweet.video? %>
+    <p>
+      <strong>動画:</strong><br>
+      <%= video_tag @tweet.video.url, controls: true, width: 400 %>
+    </p>
+  <% end %>
+
+</div>
+
+<div>
+  <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+  <%= link_to "削除する", @tweet, image: :delete %>
+  <%= link_to "投稿一覧に戻る", tweets_path %>
+</div>

@@ -1,0 +1,64 @@
+<% content_for :title, "Editing tweet" %>
+
+<%= form_for @tweet, html: { multipart: true } do |f| %>
+
+<h1>投稿を編集する</h1>
+
+  <div class="field">
+    <%= f.label :"トレーニング名" %>
+    <%= f.text_area :genre, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"鍛えられる部位" %>
+    <%= f.text_area :part, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"器具" %>
+    <%= f.select :tool, 
+    [["器具必要", "器具必要"], 
+    ["器具不要", "器具不要"]], include_blank: "選択して下さい" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :"イメージ画像" %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"難易度" %>
+    <%= f.select :level, 
+    [["1", "1"], 
+    ["2", "2"], 
+    ["3", "3"]], include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"トレーニングに使えるスペース" %>
+    <%= f.select :size, 
+    [["大の字で寝れる", "大の字で寝れる"], 
+    ["腕のみを広げて寝れる", "腕のみを広げて寝れる"], 
+    ["縦にまっすぐ寝れる", "縦にまっすぐ寝れる"],
+    ["その場で立つ・しゃがむのみ", "その場で立つ・しゃがむのみ"]], include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"ジャンプ" %>
+    <%= f.select :jump, 
+    [["あり", "あり"], 
+    ["なし", "なし"]], include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"動画" %>
+    <%= f.file_field :video, accept: 'video/*' %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+
+<% end %>
+  
+<%= link_to "詳細へ", @tweet %> 
+<%= link_to "一覧に戻る", tweets_path %>
