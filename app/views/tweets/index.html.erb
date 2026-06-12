@@ -1,61 +1,83 @@
 
-<h3>一覧ページ</h3>
+<div class="hero">
+  <div class="hero-text">
+    <h2>自宅での運動をサポート!!!!!</h2>
+  </div>
+</div>
 
-<h3>投稿を検索</h3>
- <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-   <%= text_field_tag :search %>
-   <%= submit_tag '検索する'  %>
-<% end %>
+<div class="menu">
+     <h3>おすすめトレーニング診断</h3>
+     <p>これから筋トレ・ダイエットを始める方や、メニューを変えてみたい方へ…！</p>
+     <%= button_to "診断する", menus_path, method: :get, class: "index-btn"  %>
+</div>
 
-<%= link_to "新規投稿へ", new_tweet_path %>
+<section id="search" class="search">
+      <h3>トレーニングを検索・投稿</h3>
+      <p>トレーニングについて詳しく知りたい方へ…！</p>
+      <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search ,nil, class: "search-tag" %>
+        <%= submit_tag '検索する', class: "search-btn" %>
+      <% end %>
+
+      <%= button_to "トレーニングを投稿", new_tweet_path, method: :get, class: "index-btn" %>
+</section>
+
+
 
 <div class="tweets-container">
   <% @tweets.each do |t| %>
-    <div class="tweet">
+    <div class="tweet-card">
+    
+        <div class="name">
+          <h4><%= t.genre %></h4>
+          (<%= t.level %>)
+        </div> 
+    
+        <div class="image">
+          <% if t.image? %>
+              <%= image_tag t.image_url,class: "tweet-media"%>
+              <% end %>
+
+          <% if t.video? %>
+              <%= video_tag t.video_url,
+              controls: true,
+              class: "tweet-media"%>
+          <% end %>
+        </div>
+    
+        <div class="detail">
+            <p>部位：<%= t.part %></p>
+            <p>器具：<%= t.tool %></p>
+            <p>必要なスペース：<%= t.size %></p>
+            <p>ジャンプ：<%= t.jump %></p>
+            <p>メモ：<%= t.note %></p>
+        </div>
+
+        <div class="user">
+          <%= t.user.email %>
       
-    <p><%= t.genre %></p>
+          <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), data: { turbo_method: :delete } do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), data: { turbo_method: :post }  do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% end %>
+          <% else %>
+              <i class="far fa-heart"></i><%= t.likes.count %>
+          <% end %> 
+        </div>
     
-    <p>
-    <% if t.image? %>
-      <%= image_tag t.image_url, size: "300x200" %>
-    <% end %>
-    </p>
-    <p><%= t.part %></p>
-    <p><%= t.tool %></p>
-    <p><%= t.level %></p>
-    <p><%= t.size %></p>
-    <p><%= t.jump %></p>
-    
-    <p>
-  <% if t.video? %>
-    <%= video_tag t.video_url,
-          controls: true,
-          width: 300 %>
+      <div class="link">
+          <%= t.created_at %>
+              <%= link_to "詳細へ", tweet_path(t.id) %>
+              <%= link_to "編集する", edit_tweet_path(t.id) %>
+              <%= link_to "削除する", tweet_path(t), data: { turbo_method: :delete } %>
+      </div>
+    </div>
   <% end %>
-
-  <%= t.user.email %>
-  
-  <% if user_signed_in? %>
-     <% if current_user.already_liked?(t) %>
-        <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), data: { turbo_method: :delete } do %>
-            <i class="fas fa-heart"></i><%= t.likes.count %>
-        <% end %>
-     <% else %>
-        <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), data: { turbo_method: :post }  do %>
-            <i class="far fa-heart"></i><%= t.likes.count %>
-        <% end %>
-     <% end %>
- <% else %>
-    <i class="far fa-heart"></i><%= t.likes.count %>
- <% end %> 
-   </p>
-  
-  <%= t.created_at %>
-  <%= link_to "詳細へ", tweet_path(t.id) %>
-  <%= link_to "編集する", edit_tweet_path(t.id) %>
-  <%= button_to "削除する", tweet_path(t.id), method: :delete %>
-  </div>
-  <% end %>
-
-  <%= link_to "おすすめトレーニング診断を始める", menus_path %>
+</div>
 </div>

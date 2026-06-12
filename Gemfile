@@ -61,7 +61,6 @@ end
 
 gem 'devise'
 
-
 gem 'cloudinary'
 
 gem 'carrierwave'
@@ -70,3 +69,5 @@ gem 'mini_magick'
 group :production do
   gem 'pg'
 end
+
+gem 'sass-rails'

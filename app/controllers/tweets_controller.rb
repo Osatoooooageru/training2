@@ -3,9 +3,17 @@ class TweetsController < ApplicationController
 
   # GET /tweets or /tweets.json
   def index
-    @tweets = Tweet.all
-  end
-
+      @tweets = Tweet.all
+      search = params[:search]
+      
+      if search.present?
+        keyword = "%#{search}%"
+        @tweets = @tweets.joins(:user).where(
+          "genre LIKE ? OR part LIKE ? OR tool LIKE ? OR level LIKE ? OR size LIKE ? OR jump LIKE ?",
+          keyword, keyword, keyword, keyword, keyword, keyword
+        )
+      end
+end
   # GET /tweets/1 or /tweets/1.json
   def show
   end
@@ -68,6 +76,6 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:genre, :part, :tool, :image, :level, :video,:size,:jump)
+      params.require(:tweet).permit(:genre, :part, :tool, :image, :level, :video,:size,:jump,:note)
     end
 end

@@ -1,3 +1,5 @@
+<div class="field-container">
+
 <p style="color: green"><%= notice %></p>
 
 <p>
@@ -11,6 +13,11 @@
   </p>
 
   <p>
+    <strong>難易度:</strong>
+    <%= @tweet.level %>
+  </p>
+
+  <p>
     <strong>鍛えられる部位:</strong>
     <%= @tweet.part %>
   </p>
@@ -21,12 +28,7 @@
   </p>
 
   <p>
-    <strong>難易度:</strong>
-    <%= @tweet.level %>
-  </p>
-
-  <p>
-    <strong>トレーニングに使えるスペース:</strong>
+    <strong>必要なスペース:</strong>
     <%= @tweet.size %>
   </p>
   
@@ -34,6 +36,12 @@
     <strong>ジャンプ:</strong>
     <%= @tweet.jump %>
   </p>
+
+  <p>
+    <strong>メモ:</strong>
+    <%= @tweet.note %>
+  </p>
+
   
   <% if @tweet.image? %>
     <p>
@@ -49,10 +57,10 @@
     </p>
   <% end %>
 
-</div>
-
 <div>
   <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
-  <%= link_to "削除する", @tweet, image: :delete %>
-  <%= link_to "投稿一覧に戻る", tweets_path %>
+  <%= link_to "削除する", tweet_path(@tweet), data: { turbo_method: :delete } %>
+  <%= link_to "投稿一覧に戻る",  tweets_path(anchor: "search")  %>
+</div>
+
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_06_070101) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_10_080331) do
   create_table "likes", force: :cascade do |t|
     t.integer "tweet_id", null: false
     t.integer "user_id", null: false
@@ -43,13 +43,14 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_06_070101) do
     t.text "part"
     t.string "tool"
     t.string "image"
-    t.integer "level"
+    t.string "level"
     t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "size"
     t.string "jump"
+    t.text "note"
   end
 
   create_table "users", force: :cascade do |t|

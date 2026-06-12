@@ -15,59 +15,69 @@
   <% end %>
   <%# ------------------------------------------ %>
 
-  <div class="field">
-    <%= f.label :"トレーニング名" %>
-    <%= f.text_area :genre, :size => "30x2" %>
-  </div>
+<div class="field-container">
+    
+    <div class="field">
+      <h5><%= f.label :"トレーニング名" %></h5>
+      <%= f.text_area :genre, :size => "30x1.9" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :"鍛えられる部位" %>
-    <%= f.text_area :part, :size => "30x2" %>
-  </div>
+    <div class="field">
+      <h5><%= f.label :"難易度" %></h5>
+      <%= f.select :level, 
+      [["みんなにおすすめ", "みんなにおすすめ"], 
+      ["初心者向け", "初心者向け"], 
+      ["中級者向け", "中級者向け"],
+      ["上級者向け", "上級者向け"], ], include_blank: "選択して下さい" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :"器具" %>
-    <%= f.select :tool, 
-    [["器具必要", "器具必要"], 
-    ["器具不要", "器具不要"]], include_blank: "選択して下さい" %>
-  </div>
+    <div class="field">
+      <h5><%= f.label :"鍛えられる部位" %></h5>
+      <%= f.text_area :part, :size => "30x1.9" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :"イメージ画像" %>
-    <%= f.file_field :image %>
-  </div>
+    <div class="field">
+      <h5><%= f.label :"器具" %></h5>
+      <%= f.select :tool, 
+      [["必要", "必要"], 
+      ["不要", "不要"]], include_blank: "選択して下さい" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :"難易度" %>
-    <%= f.select :level, 
-    [["1", "1"], 
-    ["2", "2"], 
-    ["3", "3"]], include_blank: "選択して下さい" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :"トレーニングに使えるスペース" %>
-    <%= f.select :size, 
-    [["大の字で寝れる", "大の字で寝れる"], 
-    ["腕のみを広げて寝れる", "腕のみを広げて寝れる"], 
-    ["縦にまっすぐ寝れる", "縦にまっすぐ寝れる"], 
-    ["その場で立つ・しゃがむのみ", "その場で立つ・しゃがむのみ"]], include_blank: "選択して下さい" %>
-  </div>
+    <div class="field">
+      <h5><%= f.label :"必要なスペース" %></h5>
+      <%= f.select :size, 
+      [["大の字で寝れる", "大の字で寝れる"], 
+      ["腕のみを広げて寝れる", "腕のみを広げて寝れる"], 
+      ["縦にまっすぐ寝れる", "縦にまっすぐ寝れる"], 
+      ["その場で立つ・しゃがむのみ", "その場で立つ・しゃがむのみ"]], include_blank: "選択して下さい" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :"ジャンプ" %>
-    <%= f.select :jump, 
-    [["ジャンプあり", "ジャンプあり"], 
-    ["ジャンプなし", "ジャンプなし"]], include_blank: "選択して下さい" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :"動画" %>
-    <%= f.file_field :video, accept: 'video/*' %>
-  </div>
+    <div class="field">
+      <h5><%= f.label :"ジャンプ" %></h5>
+      <%= f.select :jump, 
+      [["あり", "あり"], 
+      ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>
 
-  <%= f.submit "投稿する" %>
+    <div class="field">
+      <h5><%= f.label :"メモ" %></h5>
+      <%= f.text_area :note, :size => "60x5" %>
+    </div>
 
-<% end %>
+    <div class="field">
+      <h5><%= f.label :"イメージ画像" %></h5>
+      <%= f.file_field :image %>
+    </div>
+    
+    <div class="field">
+      <h5><%= f.label :"動画" %></h5>
+      <%= f.file_field :video, accept: 'video/*' %>
+    </div>
 
-<%= link_to "一覧に戻る", tweets_path %>
+    <%= f.submit "投稿する" %>
+
+  <% end %>
+
+  <%= link_to "一覧に戻る",  tweets_path(anchor: "search")  %>
+
+</div>

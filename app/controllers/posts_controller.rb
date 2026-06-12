@@ -65,6 +65,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:video)
+      params.require(:post).permit(:genre,:part,:tool,:image, :level,:video,:size,:jump)
     end
 end
