@@ -44,7 +44,11 @@
               class: "tweet-media"%>
           <% end %>
 
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% if t.youtube_url.present? && find_youtube_url(t.youtube_url).present? %>
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>">
+          </iframe>
+        <% end %>
         </div>
     
         <div class="detail">

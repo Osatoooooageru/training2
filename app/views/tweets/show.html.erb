@@ -57,7 +57,10 @@
     </p>
   <% end %>
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= find_youtube_url(@tweet.youtube_url) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="field">
+  <%= f.label :youtube_url %>
+  <%= f.text_field :youtube_url, :size => 140 %>
+</div>
 
 <div>
   <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
