@@ -57,10 +57,12 @@
     </p>
   <% end %>
 
-<div class="field">
-  <%= f.label :youtube_url %>
-  <%= f.text_field :youtube_url, :size => 140 %>
-</div>
+<% if @tweet.youtube_url.present? %>
+  <p>
+    <strong>YouTube:</strong>
+    <%= @tweet.youtube_url %>
+  </p>
+<% end %>
 
 <div>
   <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
