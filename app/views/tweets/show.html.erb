@@ -50,13 +50,6 @@
     </p>
   <% end %>
 
-  <% if @tweet.video? %>
-    <p>
-      <strong>動画:</strong><br>
-      <%= video_tag @tweet.video.url, controls: true, width: 400 %>
-    </p>
-  <% end %>
-
 <% if @tweet.youtube_url.present? %>
   <p>
     <strong>YouTube:</strong>

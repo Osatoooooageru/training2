@@ -76,6 +76,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:genre, :part, :tool, :image, :level, :video,:size,:jump,:note,:youtube_url)
+      params.require(:tweet).permit(:genre, :part, :tool, :image, :level,:size,:jump,:note,:youtube_url)
     end
 end

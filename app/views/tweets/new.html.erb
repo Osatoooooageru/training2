@@ -68,14 +68,9 @@
       <h5><%= f.label :"イメージ画像" %></h5>
       <%= f.file_field :image %>
     </div>
-    
-    <div class="field">
-      <h5><%= f.label :"動画" %></h5>
-      <%= f.file_field :video, accept: 'video/*' %>
-    </div>
 
     <div class="field">
-      <%= f.label :youtube_url %>
+      <%= f.label :"YouTubeのURL" %>
       <%= f.text_field :youtube_url, :size => 140 %>
     </div>
 

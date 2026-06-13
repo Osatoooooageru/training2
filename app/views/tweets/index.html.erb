@@ -34,21 +34,15 @@
         </div> 
     
         <div class="image">
-          <% if t.image? %>
-              <%= image_tag t.image_url,class: "tweet-media"%>
-              <% end %>
+           <% if t.image.present? %>
+              <%= image_tag t.image_url, class: "tweet-media" %>
+           <% end %>
 
-          <% if t.video? %>
-              <%= video_tag t.video_url,
-              controls: true,
-              class: "tweet-media"%>
-          <% end %>
-
-        <% if t.youtube_url.present? && find_youtube_url(t.youtube_url).present? %>
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>">
-          </iframe>
-        <% end %>
+            <% if t.youtube_url.present? && find_youtube_url(t.youtube_url).present? %>
+              <iframe 
+                src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>">
+              </iframe>
+            <% end %>
         </div>
     
         <div class="detail">
