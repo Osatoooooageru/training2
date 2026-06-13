@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_10_080331) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_13_104343) do
   create_table "likes", force: :cascade do |t|
     t.integer "tweet_id", null: false
     t.integer "user_id", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_10_080331) do
     t.string "size"
     t.string "jump"
     t.text "note"
+    t.string "youtube_url"
   end
 
   create_table "users", force: :cascade do |t|

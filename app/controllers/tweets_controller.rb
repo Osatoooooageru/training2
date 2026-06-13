@@ -78,4 +78,8 @@ end
     def tweet_params
       params.require(:tweet).permit(:genre, :part, :tool, :image, :level, :video,:size,:jump,:note)
     end
+
+    def tweet_params
+        params.require(:tweet).permit(:youtube_url)
+    end
 end

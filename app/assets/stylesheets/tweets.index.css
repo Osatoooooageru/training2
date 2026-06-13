@@ -1,10 +1,7 @@
 .hero {
   height: 75vh;
   background-image: 
-  linear-gradient(
-      rgba(27, 11, 66, 0.3),
-      rgba(27, 11, 66, 0.1)
-    ),url("こぱお部屋.png");
+  url("こぱお部屋.png");
   opacity: 0.75;
   background-size: cover;
   background-position: center;
