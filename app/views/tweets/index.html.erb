@@ -39,8 +39,9 @@
            <% end %>
 
             <% if t.youtube_url.present? && find_youtube_url(t.youtube_url).present? %>
-              <iframe 
-                src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>">
+              <iframe
+                 class="tweet-media"
+                  src="https://www.youtube.com/embed/<%= find_youtube_url(t.youtube_url) %>">
               </iframe>
             <% end %>
         </div>

@@ -1,7 +1,10 @@
 .hero {
+  margin-left: -13px;
+  margin-right: -13px;
   height: 75vh;
   background-image: 
-  url("こぱお部屋.png");
+  linear-gradient(rgba(73, 30, 101, 0.231), rgba(15, 7, 18, 0.205)),
+  url("こぱお部屋2.png");
   opacity: 0.75;
   background-size: cover;
   background-position: center;
@@ -11,8 +14,9 @@
   align-items: center;  
   justify-content: flex-start; 
   padding: 30px;
-
     }
+
+      
 
       .hero h2 {
         font-family: "WDXL Lubrifont JP N", sans-serif;
@@ -47,7 +51,7 @@ h3 {
 .menu {
   background-color:rgba(54, 53, 61, 0.7);
   text-align: center;
-  margin: 0px 10px 10px 10px auto; 
+  margin: 10px auto; 
   padding: 5px 5px;
   }
 

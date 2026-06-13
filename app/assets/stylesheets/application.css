@@ -15,10 +15,11 @@
  */
  
  body{
+    margin: 13px;
     font-family: "游ゴシック","游明朝";
     background-image: url(こぱごつごつ.png);
     color:silver;
- }
+    }
 
  a {
    color: rgb(157, 129, 241);            
@@ -66,9 +67,11 @@ h2{       /* user関係*/
    
 
 header {
+    margin-top: -13px;
+    margin-left: -13px;
+    margin-right: -13px;
     background-color:gray;
     background-image: url(こぱこんくり2.png);
-    width: 100%;
     height:55px;
     display:flex;
     justify-content: space-between;
