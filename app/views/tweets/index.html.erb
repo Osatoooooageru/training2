@@ -11,18 +11,77 @@
      <%= button_to "診断する", menus_path, method: :get, class: "index-btn"  %>
 </div>
 
-<section id="search" class="search">
-      <h3>トレーニングを検索・投稿</h3>
+<section id="searchgo" class="search">
+      <h3>トレーニングを検索</h3>
       <p>トレーニングについて詳しく知りたい方へ…！</p>
-      <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-        <%= text_field_tag :search ,nil, class: "search-tag" %>
-        <%= submit_tag '検索する', class: "search-btn" %>
-      <% end %>
+            <p class="narrowing">フリーワード検索</p>
+            <%= form_tag tweets_path(anchor: "searchgo"), method: :get, data: { turbo: false } do %>
+              <%= text_field_tag :search, nil, class: "search-tag" %>
+              <%= submit_tag "検索する", class: "search-btn" %>
+            <% end %>
+            
+            <p class="narrowing">条件を絞って検索</p>
+            <%= form_with(
+                url: tweets_path(anchor: "searchgo"),
+                method: :get,
+                local: true,
+                data: { turbo: false }
+              ) do |f| %>
 
-      <%= button_to "トレーニングを投稿", new_tweet_path, method: :get, class: "index-btn" %>
+                  <div class="narrowingitem">
+                    <div>
+                      <%= f.label :genre, "トレーニング名",class: "search-point" %>
+                      <%= f.text_field :genre %>
+                    </div>
+
+                    <div>
+                      <%= f.label :level, "難易度",class: "search-point" %>
+                      <%= f.select :level,
+                      ["みんなにおすすめ",
+                        "初心者向け",
+                        "中級者向け",
+                        "上級者向け" ],
+                      include_blank: "選択してください" %>
+                    </div>
+
+                    <div>
+                      <%= f.label :part, "鍛えられる部位",class: "search-point" %>
+                      <%= f.text_field :part %>
+                    </div>
+
+                    <div>
+                      <%= f.label :tool, "器具",class: "search-point" %>
+                      <%= f.select :tool,
+                      ["必要",
+                        "不要"],
+                      include_blank: "選択してください" %>
+                    </div>
+
+                    <div>
+                        <%= f.label :size,"必要なスペース",class: "search-point" %>
+                        <%= f.select :size, 
+                        [ "大の字で寝れる", 
+                          "腕のみを広げて寝れる", 
+                          "縦にまっすぐ寝れる", 
+                          "その場で立つ・しゃがむのみ"], 
+                        include_blank: "選択して下さい" %>
+                      </div>
+                    
+                    <div>
+                      <%= f.label :jump,"ジャンプ",class: "search-point" %>
+                      <%= f.select :jump, 
+                      ["あり", 
+                      "なし",],
+                      include_blank: "選択して下さい" %>
+                    </div>
+                  </div>
+                    <%= f.submit "検索する", class: "search-btn" %>
+                <% end %>
+      
 </section>
 
-
+<div class="tweets-new">
+<%= button_to "+ 新しいトレーニングを投稿する", new_tweet_path, method: :get, class: "index-btn" %>
 
 <div class="tweets-container">
   <% @tweets.each do |t| %>
@@ -84,5 +143,4 @@
       </div>
     </div>
   <% end %>
-</div>
 </div>

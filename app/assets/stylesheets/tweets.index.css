@@ -2,153 +2,203 @@
   margin-left: -13px;
   margin-right: -13px;
   height: 75vh;
-  background-image: 
-  linear-gradient(rgba(73, 30, 101, 0.231), rgba(15, 7, 18, 0.205)),
-  url("こぱお部屋2.png");
-  opacity: 0.75;
+  background-image:
+    linear-gradient(
+      rgba(39, 6, 117, 0.153),
+      rgba(8, 1, 16, 0.114)
+    ),
+    url("こぱお部屋2.png");
+  opacity: 0.8;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  
-  align-items: center;  
-  justify-content: flex-start; 
+  align-items: center;
+  justify-content: flex-start;
   padding: 30px;
-    }
+}
 
-      
-
-      .hero h2 {
-        font-family: "WDXL Lubrifont JP N", sans-serif;
-        color: silver;
-        font-size: 18px;
-        font-weight: 100;
+        .hero h2 {
+          font-family: "WDXL Lubrifont JP N", sans-serif;
+          color: silver;
+          font-size: 18px;
+          font-weight: 100;
         }
-
 
 h3 {
   font-family: "WDXL Lubrifont JP N", sans-serif;
   font-weight: 200;
   width: 200px;
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
   text-align: center;
   border-right: solid #4d11c5;
   border-left: solid #460db9;
-  border-width: medium
-  }
+  border-width: medium;
+}
 
 .index-btn {
-  background-color: silver; 
-  color: black;                           
-  padding: 6px 80px;                     
-  border: none;                            
-  border-radius: 5px;                     
-  font-size: 12px;                         
- }
+  background-color: silver;
+  color: black;
+  padding: 6px 80px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
- 
- 
 .menu {
-  background-color:rgba(54, 53, 61, 0.7);
+  background-color: rgba(54, 53, 61, 0.7);
   text-align: center;
-  margin: 10px auto; 
-  padding: 5px 5px;
-  }
+  margin: 10px auto;
+  padding: 15px;
+}
 
 .search {
-  background-color:rgba(54, 53, 61, 0.7);
+  background-color: rgba(54, 53, 61, 0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px auto; 
-  padding: 5px 5px;
-  }
+  margin: 10px auto;
+  padding: 15px;
+}
 
-    .search-btn {
-      background-color: #5527b2; 
-      color: rgb(254, 254, 254);                        
-      padding: 6px 12px;                       
-      border: none;                          
-      border-radius: 5px;                     
-      font-size: 12px; 
-      margin-bottom: 20px;                        
-    }
+      .search-btn {
+        background-color:silver;
+        color: black;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
 
-    .search-tag {
-      background-color: rgb(229, 223, 229);
-      padding: 6px 10px; 
-      width: 250px;
-      border-radius: 5px; 
-      margin-bottom: 20px; 
-    }
+      .search-tag {
+        background-color: rgb(212, 212, 212);
+        padding: 6px 10px;
+        width: 250px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
 
-
-.tweets-container {
-  background-color:rgba(54, 53, 61, 0.7);
-  padding: 20px; 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 10px;     
-  max-width: 1200px; 
-  margin: 0 auto;    
-  }
-
-    .tweet-card {
-      background-color:rgba(96, 93, 96, 0.7);
-      border-top: solid #300f72;
-      overflow: hidden;
-      width: 100%;
-      margin: 0;   
-    }
-
-        .name{
-          display: flex;
-          align-items: center; 
-          gap: 10px; 
-          background-color:rgba(62, 60, 62, 0.7);
-          padding: 5px 10px;
-          }
-
-        .name h4{
-          font-weight: bold; 
-          margin: 0;   
-          }
-
-        .image{
-          display: flex;
-          gap: 15px;
-          padding: 5px 10px;
-          }
-
-        .tweet-media {
-            width: 200px;        
-            height: 150px;  
-            object-fit: cover;    
-            box-sizing: border-box;    
-          }
-
-        .detail{ 
-          padding: 2px 10px;
-          }
-
-        .detail p {
-          margin-top: 0;
-          margin-bottom: 0;
-          }
-
-        .user{
-          background-color:rgba(62, 60, 62, 0.7);
-          padding: 5px 10px 0px 10px;  
-          }
-
-        .tweet-card .link {
-            display: flex;
-            gap: 15px; 
-            background-color:rgba(62, 60, 62, 0.7);
-            padding: 0px 10px 5px 10px;     
+      .narrowing{
+        font-weight: bold;
+        font-size: 18px; 
+        margin: 10px 0px 10px 0;
+        border-bottom:solid #580bf1;
+        padding-right: 20px;   
+        padding-left: 20px;   
+        display: inline-block;  
+        border-width: thin;
         }
-
-        .link a{
-          text-decoration: none;
+        
+      .narrowingitem{
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap:10px;      
+        margin-bottom: 20px;            
+        align-items: flex-end; 
           }
+
+              .narrowingitem > div {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 150px;        
+                 }
+
+              .search-point {
+                width: 100% !important;
+                }
+
+              .narrowingitem input,
+              .narrowingitem select {
+                background-color: rgb(212, 212, 212);
+                width: 100%;
+                padding: 6px;
+                border-radius: 5px;
+                box-sizing: border-box;
+              }
+
+              .narrowing .search-btn {
+                flex: 0 0 auto; 
+                width: auto;
+                padding: 6px 12px; 
+                margin: 10px 0 0 auto;
+                }
+
+ .tweets-new{
+    background-color: rgba(54, 53, 61, 0.7);
+    padding: 20px;
+      }
+    
+    .tweets-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+            .tweet-card {
+              background-color: rgba(96, 93, 96, 0.7);
+              border-top: solid #300f72;
+              overflow: hidden;
+              width: 100%;
+              margin: 0;
+            }
+
+            .name {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              background-color: rgba(62, 60, 62, 0.7);
+              padding: 5px 10px;
+            }
+
+            .name h4 {
+              font-weight: bold;
+              margin: 0;
+            }
+
+            .image {
+              display: flex;
+              gap: 15px;
+              padding: 5px 10px;
+            }
+
+            .tweet-media {
+              width: 200px;
+              height: 150px;
+              object-fit: cover;
+              box-sizing: border-box;
+            }
+
+            .detail {
+              padding: 2px 10px;
+            }
+
+            .detail p {
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+
+            .user {
+              background-color: rgba(62, 60, 62, 0.7);
+              padding: 5px 10px 0 10px;
+            }
+
+            .tweet-card .link {
+              display: flex;
+              gap: 15px;
+              background-color: rgba(62, 60, 62, 0.7);
+              padding: 0 10px 5px 10px;
+            }
+
+            .link a {
+              text-decoration: none;
+            }
+            

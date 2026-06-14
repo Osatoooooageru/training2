@@ -17,7 +17,8 @@
  body{
     margin: 13px;
     font-family: "游ゴシック","游明朝";
-    background-image: url(こぱごつごつ.png);
+    background-image: 
+    url(こぱごつごつ改2.png);
     color:silver;
     }
 
@@ -27,8 +28,9 @@
     }
 
 .field-container{
-   padding: 20px; 
-   background-color:rgba(69, 66, 69, 0.7);
+   padding: 15px 25px 25px 25px; 
+   margin:18px 5px 18px 5px ;
+   background-color:rgba(1, 0, 17, 0.571);
    }
       
       .field{

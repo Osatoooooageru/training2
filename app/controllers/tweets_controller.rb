@@ -13,8 +13,41 @@ class TweetsController < ApplicationController
           keyword, keyword, keyword, keyword, keyword, keyword
         )
       end
-end
+
+      if params[:genre].present?
+        @tweets = @tweets.where(
+        "genre LIKE ?",
+        "%#{params[:genre]}%"
+         )
+      end
+
+      if params[:level].present?
+        @tweets = @tweets.where(level: params[:level])
+      end
+
+      if params[:part].present?
+        @tweets = @tweets.where(
+          "part LIKE ?",
+          "%#{params[:part]}%"
+        )
+      end
+
+      if params[:tool].present?
+        @tweets = @tweets.where(tool: params[:tool])
+      end
+
+      if params[:size].present? && params[:size] != "選択して下さい"
+        @tweets = @tweets.where(size: params[:size])
+      end
+
+      if params[:jump].present? && params[:jump] != "選択して下さい"
+        @tweets = @tweets.where(jump: params[:jump])
+      end
+
+    end
+
   # GET /tweets/1 or /tweets/1.json
+  
   def show
   end
 
