@@ -38,6 +38,10 @@
               <%= image_tag t.image_url, class: "tweet-media" %>
            <% end %>
 
+           <% if t.video.present? %>
+              <%= video_tag t.video_url, controls: true, class: "tweet-media" %>
+           <% end %>
+
             <% if t.youtube_url.present? && find_youtube_url(t.youtube_url).present? %>
               <iframe
                  class="tweet-media"

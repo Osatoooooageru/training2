@@ -59,6 +59,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :"動画" %>
+    <%= f.file_field :video %>
+  </div>
+
+  <div class="field">
       <%= f.label :"YouTubeのURL" %>
       <%= f.text_field :youtube_url, :size => 140 %>
   </div>
