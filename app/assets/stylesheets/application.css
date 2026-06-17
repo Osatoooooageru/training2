@@ -16,9 +16,9 @@
  
  body{
     margin: 13px;
-    font-family: "游ゴシック","游明朝";
+    font-family: "M PLUS U", sans-serif;
     background-image: 
-    url(こぱごつごつ改2.png);
+    url(こぱごつごつ改4.png);
     color:silver;
     }
 
@@ -74,7 +74,7 @@ header {
     margin-right: -13px;
     background-color:gray;
     background-image: url(こぱこんくり2.png);
-    height:55px;
+    height:60px;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -83,30 +83,46 @@ header {
        }  
  
          header a{
-            font-family: "WDXL Lubrifont JP N", sans-serif;
+            font-family: "Dela Gothic One", sans-serif;
             font-weight: 200;
             font-style: normal;
             color:silver;
             font-size: 15px; 
             text-decoration: none;
          } 
+
+         header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+             }
+         
          header h1 a{
-            font-family: "Alfa Slab One", serif;
+            font-family: "Rubik Glitch", system-ui;
             font-weight: 400;
             font-style: normal;
             color:silver;
-            font-size: 20px;
+            font-size: 25px;
             margin-left: 40px;
          }
-         .header-list{
-            display: flex;
-            align-items: center;
-         }
+         
          header ul{
             display: flex;
+            margin: 0;
+            padding: 0;
          }
          header li {
             list-style: none;  
             margin-right: 40px;
          }
+
+         .logoutbtn{
+            font-family: "Dela Gothic One", sans-serif;
+            background-color:silver;
+            color:rgba(62, 60, 62, 1) ;
+            font-weight: bold;
+            padding: 6px 20px;
+            border-radius: 5px;
+            font-size: 13px;
+            }
 

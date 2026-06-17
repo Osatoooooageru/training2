@@ -21,6 +21,11 @@ class TweetsController < ApplicationController
          )
       end
 
+      if params[:liked].present?
+          @tweets = @tweets.joins(:likes)
+                          .where(likes: { user_id: current_user.id })
+      end
+
       if params[:level].present?
         @tweets = @tweets.where(level: params[:level])
       end

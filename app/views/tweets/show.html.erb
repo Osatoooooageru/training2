@@ -2,6 +2,20 @@
 
 <p style="color: green"><%= notice %></p>
 
+<% if user_signed_in? %>
+          <% if current_user.already_liked?(@tweet) %>
+            <%= link_to tweet_like_path(id: @tweet.id, tweet_id: @tweet.id), data: { turbo_method: :delete } do %>
+                 <p><i class="fa-solid fa-bookmark"></i>(<%=@tweet.likes.count %>）お気に入りを取り消す</p>
+            <% end %>
+          <% else %>
+            <%= link_to tweet_likes_path(id: @tweet.id, tweet_id: @tweet.id), data: { turbo_method: :post }  do %>
+                <p><i class="fa-regular fa-bookmark"></i>(<%= @tweet.likes.count %>)お気に入り</p>
+            <% end %>
+          <% end %>
+          <% else %>
+               <i class="fa-regular fa-bookmark"></i>(<%= @tweet.likes.count %>)
+          <% end %> 
+
 <p>
     <strong>投稿者:</strong>
     <%= @tweet.user.email %>

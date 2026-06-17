@@ -19,16 +19,17 @@
 }
 
         .hero h2 {
-          font-family: "WDXL Lubrifont JP N", sans-serif;
+          font-family: "Dela Gothic One", sans-serif;
           color: silver;
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 100;
         }
 
 h3 {
-  font-family: "WDXL Lubrifont JP N", sans-serif;
-  font-weight: 200;
-  width: 200px;
+  font-family: "Dela Gothic One", sans-serif;
+  -webkit-text-stroke: 1px #333333; 
+  font-weight: 250;
+  width: 250px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -41,12 +42,15 @@ h3 {
 
 .index-btn {
   background-color: silver;
-  color: black;
+  color:rgba(62, 60, 62, 1) ;
+  font-weight: bold;
   padding: 6px 80px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
   margin-bottom: 10px;
+  border: solid #4c0be2; 
+  
 }
 
 .menu {
@@ -63,14 +67,15 @@ h3 {
   align-items: center;
   justify-content: center;
   margin: 10px auto;
-  padding: 15px;
+  padding: 20px;
 }
 
       .search-btn {
-        background-color:silver;
-        color: black;
+        background-color:#4c0be2;
+        color:rgb(212, 212, 212);
+        border: 1px solid silver; 
+        font-weight: bold;
         padding: 6px 12px;
-        border: none;
         border-radius: 5px;
         font-size: 12px;
         margin-bottom: 15px;
@@ -95,40 +100,46 @@ h3 {
         border-width: thin;
         }
         
-      .narrowingitem{
-        font-size: 14px;
-        display: flex;
-        flex-wrap: wrap;
-        gap:10px;      
-        margin-bottom: 20px;            
-        align-items: flex-end; 
+          .narrowingitem{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: flex-end;
+            gap:10px;      
+            margin-bottom: 20px;            
+            }
+
+          .narrowingitem div {
+              display: flex;
+              flex-direction: column;
+              width: 150px;
+              height: 50px;
+            }
+          
+          .narrowingitem input[type="text"],
+          .narrowingitem select {
+            background-color: rgb(212, 212, 212);
+            padding: 6px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 100%;
+            }
+
+          .narrowingitem [type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            border-radius: 5px;
+            accent-color: #580bf1;
           }
 
-              .narrowingitem > div {
-                display: flex;
-                flex-direction: column;
-                flex: 1 1 150px;        
-                 }
-
-              .search-point {
-                width: 100% !important;
-                }
-
-              .narrowingitem input,
-              .narrowingitem select {
-                background-color: rgb(212, 212, 212);
-                width: 100%;
-                padding: 6px;
-                border-radius: 5px;
-                box-sizing: border-box;
+            .narrowing-btn {
+               margin-left: auto;
+               width: 100%;
+               height: 50px;
+               display: flex;
+               align-items: flex-end;
+               margin-bottom: 0px;
               }
-
-              .narrowing .search-btn {
-                flex: 0 0 auto; 
-                width: auto;
-                padding: 6px 12px; 
-                margin: 10px 0 0 auto;
-                }
 
  .tweets-new{
     background-color: rgba(54, 53, 61, 0.7);
@@ -154,20 +165,28 @@ h3 {
             .name {
               display: flex;
               align-items: center;
+              justify-content: space-between;
               gap: 10px;
               background-color: rgba(62, 60, 62, 0.7);
-              padding: 5px 10px;
+              padding: 5px 15px;
             }
+                .name2 {
+                   display: flex;
+                   align-items: center;
 
-            .name h4 {
-              font-weight: bold;
-              margin: 0;
-            }
+                  }
+
+
+                .name h4 {
+                  font-weight: bold;
+                  margin: 0;
+                }
+
 
             .image {
               display: flex;
               gap: 15px;
-              padding: 5px 10px;
+              padding: 5px 15px;
             }
 
             .tweet-media {
@@ -178,7 +197,7 @@ h3 {
             }
 
             .detail {
-              padding: 2px 10px;
+              padding: 2px 15px;
             }
 
             .detail p {
@@ -188,14 +207,14 @@ h3 {
 
             .user {
               background-color: rgba(62, 60, 62, 0.7);
-              padding: 5px 10px 0 10px;
+              padding: 5px 15px 0 15px;
             }
 
             .tweet-card .link {
               display: flex;
               gap: 15px;
               background-color: rgba(62, 60, 62, 0.7);
-              padding: 0 10px 5px 10px;
+              padding: 0 15px 5px 15px;
             }
 
             .link a {

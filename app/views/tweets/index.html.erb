@@ -12,7 +12,7 @@
 </div>
 
 <section id="searchgo" class="search">
-      <h3>トレーニングを検索</h3>
+      <h3>トレーニングを検索・投稿</h3>
       <p>トレーニングについて詳しく知りたい方へ…！</p>
             <p class="narrowing">フリーワード検索</p>
             <%= form_tag tweets_path(anchor: "searchgo"), method: :get, data: { turbo: false } do %>
@@ -28,14 +28,15 @@
                 data: { turbo: false }
               ) do |f| %>
 
-                  <div class="narrowingitem">
+                <div class="narrowingitem">
+
                     <div>
-                      <%= f.label :genre, "トレーニング名",class: "search-point" %>
+                      <%= f.label :genre, "トレーニング名" %>
                       <%= f.text_field :genre %>
                     </div>
 
                     <div>
-                      <%= f.label :level, "難易度",class: "search-point" %>
+                      <%= f.label :level, "難易度" %>
                       <%= f.select :level,
                       ["みんなにおすすめ",
                         "初心者向け",
@@ -45,12 +46,17 @@
                     </div>
 
                     <div>
-                      <%= f.label :part, "鍛えられる部位",class: "search-point" %>
+                      <%= label_tag :liked, "お気に入り"%>
+                      <%= check_box_tag :liked, "true" %>
+                    </div>
+
+                    <div>
+                      <%= f.label :part, "鍛えられる部位" %>
                       <%= f.text_field :part %>
                     </div>
 
                     <div>
-                      <%= f.label :tool, "器具",class: "search-point" %>
+                      <%= f.label :tool, "器具" %>
                       <%= f.select :tool,
                       ["必要",
                         "不要"],
@@ -58,7 +64,7 @@
                     </div>
 
                     <div>
-                        <%= f.label :size,"必要なスペース",class: "search-point" %>
+                        <%= f.label :size,"必要なスペース" %>
                         <%= f.select :size, 
                         [ "大の字で寝れる", 
                           "腕のみを広げて寝れる", 
@@ -68,16 +74,18 @@
                       </div>
                     
                     <div>
-                      <%= f.label :jump,"ジャンプ",class: "search-point" %>
+                      <%= f.label :jump,"ジャンプ" %>
                       <%= f.select :jump, 
                       ["あり", 
                       "なし",],
                       include_blank: "選択して下さい" %>
                     </div>
-                  </div>
+                
+                <div class="narrowing-btn">
                     <%= f.submit "検索する", class: "search-btn" %>
+                </div>
                 <% end %>
-      
+                
 </section>
 
 <div class="tweets-new">
@@ -88,8 +96,26 @@
     <div class="tweet-card">
     
         <div class="name">
-          <h4><%= t.genre %></h4>
-          (<%= t.level %>)
+            <div class="name2">
+              <h4><%= t.genre %></h4>
+              (<%= t.level %>)
+            </div>
+          
+            <div class="iine">
+                  <% if user_signed_in? %>
+                  <% if current_user.already_liked?(t) %>
+                    <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), data: { turbo_method: :delete } do %>
+                        <i class="fa-solid fa-bookmark"></i><%= t.likes.count %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), data: { turbo_method: :post }  do %>
+                        <i class="fa-regular fa-bookmark"></i><%= t.likes.count %>
+                    <% end %>
+                  <% end %>
+                  <% else %>
+                      <i class="fa-regular fa-bookmark"></i><%= t.likes.count %>
+                  <% end %> 
+            </div>
         </div> 
     
         <div class="image">
@@ -119,20 +145,6 @@
 
         <div class="user">
           <%= t.user.email %>
-      
-          <% if user_signed_in? %>
-          <% if current_user.already_liked?(t) %>
-            <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), data: { turbo_method: :delete } do %>
-                <i class="fas fa-heart"></i><%= t.likes.count %>
-            <% end %>
-          <% else %>
-            <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), data: { turbo_method: :post }  do %>
-                <i class="far fa-heart"></i><%= t.likes.count %>
-            <% end %>
-          <% end %>
-          <% else %>
-              <i class="far fa-heart"></i><%= t.likes.count %>
-          <% end %> 
         </div>
     
       <div class="link">
