@@ -83,6 +83,7 @@ h3 {
 
       .search-tag {
         background-color: rgb(212, 212, 212);
+        border: none; 
         padding: 6px 10px;
         width: 250px;
         border-radius: 5px;
@@ -119,6 +120,7 @@ h3 {
           .narrowingitem input[type="text"],
           .narrowingitem select {
             background-color: rgb(212, 212, 212);
+            border: none; 
             padding: 6px;
             border-radius: 5px;
             box-sizing: border-box;
