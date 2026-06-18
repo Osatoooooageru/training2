@@ -20,7 +20,7 @@
     
     <div class="field">
       <h5><%= f.label :"トレーニング名" %></h5>
-      <%= f.text_area :genre, :size => "30x1.9" %>
+      <%= f.text_area :genre, class: "nameinput" %>
     </div>
 
     <div class="field">
@@ -29,19 +29,21 @@
       [["みんなにおすすめ", "みんなにおすすめ"], 
       ["初心者向け", "初心者向け"], 
       ["中級者向け", "中級者向け"],
-      ["上級者向け", "上級者向け"], ], include_blank: "選択して下さい" %>
+      ["上級者向け", "上級者向け"], ], { include_blank: "選択して下さい" }, 
+      { class: "levelselect" } %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"鍛えられる部位" %></h5>
-      <%= f.text_area :part, :size => "30x1.9" %>
+      <%= f.text_area :part,  class: "partinput" %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"器具" %></h5>
       <%= f.select :tool, 
       [["必要", "必要"], 
-      ["不要", "不要"]], include_blank: "選択して下さい" %>
+      ["不要", "不要"]],  { include_blank: "選択して下さい" }, 
+      { class: "toolselect" }  %>
     </div>
 
     <div class="field">
@@ -50,40 +52,43 @@
       [["大の字で寝れる", "大の字で寝れる"], 
       ["腕のみを広げて寝れる", "腕のみを広げて寝れる"], 
       ["縦にまっすぐ寝れる", "縦にまっすぐ寝れる"], 
-      ["その場で立つ・しゃがむのみ", "その場で立つ・しゃがむのみ"]], include_blank: "選択して下さい" %>
+      ["その場で立つ・しゃがむのみ", "その場で立つ・しゃがむのみ"]], { include_blank: "選択して下さい" }, 
+      { class: "sizeselect" }  %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"ジャンプ" %></h5>
       <%= f.select :jump, 
       [["あり", "あり"], 
-      ["なし", "なし"]], include_blank: "選択して下さい" %>
+      ["なし", "なし"]],  { include_blank: "選択して下さい" }, 
+     { class: "jumpselect" }  %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"メモ" %></h5>
-      <%= f.text_area :note, :size => "60x5" %>
+      <%= f.text_area :note, class: "noteinput" %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"イメージ画像" %></h5>
-      <%= f.file_field :image %>
+      <%= f.file_field :image,class: "imagefile" %>
     </div>
 
     <div class="field">
         <h5><%= f.label :"動画" %></h5>
-        <%= f.file_field :video %>
+        <%= f.file_field :video,class: "videofile" %>
     </div>
 
     <div class="field">
       <h5><%= f.label :"YouTubeのURL" %></h5>
-      <%= f.text_field :youtube_url, :size => 100 %>
+      <%= f.text_field :youtube_url,class: "youtubeinput" %>
     </div>
+  
 
-    <%= f.submit "投稿する" %>
+    <%= f.submit "投稿する",class: "menu-btn" %>
 
   <% end %>
 
-  <%= link_to "一覧に戻る",  tweets_path(anchor: "search")  %>
+  <%= link_to "一覧に戻る",  tweets_path(anchor: "search") ,class: "ichirango" %>
 
 </div>

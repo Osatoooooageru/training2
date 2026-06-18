@@ -162,6 +162,8 @@ h3 {
               overflow: hidden;
               width: 100%;
               margin: 0;
+              display:flex;
+              flex-direction:column;
             }
 
             .name {
@@ -186,16 +188,17 @@ h3 {
 
 
             .image {
+              margin: 3px 15px;
               display: flex;
               gap: 15px;
-              padding: 5px 15px;
+              flex-wrap:wrap;
             }
 
             .tweet-media {
-              width: 200px;
-              height: 150px;
-              object-fit: cover;
-              box-sizing: border-box;
+              width:100%;
+              max-width:250px;
+              height:150px;
+              object-fit:cover;
             }
 
             .detail {

@@ -1,0 +1,136 @@
+.nameinput{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 400px;
+    height: 35px;
+  } 
+
+.levelselect{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 250px;
+    text-align:center ;
+
+    } 
+
+.partinput{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 400px;
+    height: 35px;
+    } 
+
+.toolselect{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 250px;
+    text-align:center ;
+    } 
+
+.sizeselect{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 250px;
+    text-align:center ;
+    } 
+
+.jumpselect{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 250px;
+    text-align:center ;
+    } 
+
+.noteinput{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    height: 90px;
+    } 
+
+.imagefile::file-selector-button{
+    margin-left:40px ;
+    background-color:silver;
+    color:rgba(62, 60, 62, 1) ;
+    font-weight: bold;
+    padding: 6px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    } 
+
+.videofile::file-selector-button{  
+    margin-left:40px ;
+    background-color:silver;
+    color:rgba(62, 60, 62, 1) ;
+    font-weight: bold;
+    padding: 6px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    } 
+
+.imagefile {
+  width: 100%;          
+  max-width: 400px;     
+  display: inline-block;
+  overflow: visible;    
+}
+
+.videofile {
+  width: 100%;
+  max-width: 400px;
+  display: inline-block;
+  overflow: visible;
+}
+
+
+.youtubeinput{
+    margin-left:40px ;
+    background-color: rgb(212, 212, 212);
+    border: none; 
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 500px;
+    height: 25px;
+    } 
+
+.menu-btn{
+     display: block; 
+     margin-left: auto; 
+     margin-right: auto;
+     margin-top: 40px;
+    } 
+
+.ichirango{
+    display: block;
+    text-align: center; 
+    }
