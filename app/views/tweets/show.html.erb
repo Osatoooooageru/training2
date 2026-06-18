@@ -60,7 +60,7 @@
   <% if @tweet.image? %>
     <p>
       <strong>イメージ画像:</strong><br>
-      <%= image_tag @tweet.image_url, width: 400 %>
+      <%= image_tag @tweet.image.url, width: 400 %>
     </p>
   <% end %>
 
