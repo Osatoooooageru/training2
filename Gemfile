@@ -1,4 +1,3 @@
-gem 'dotenv-rails'
 
 source "https://rubygems.org"
 
@@ -62,7 +61,6 @@ end
 gem 'devise'
 
 gem 'cloudinary'
-
 gem 'carrierwave'
 gem 'mini_magick'
 
